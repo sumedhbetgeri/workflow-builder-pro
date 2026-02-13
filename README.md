@@ -296,23 +296,4 @@ workflow-builder-app/
 - [ ] API webhooks for integration
 - [ ] Advanced analytics dashboard
 
-## 📄 License
 
-MIT License - feel free to use this project for your portfolio!
-
-## 🙏 Acknowledgments
-
-- Built with [Claude AI](https://www.anthropic.com/) by Anthropic
-- UI components powered by [TailwindCSS](https://tailwindcss.com/)
-- Icons from Unicode emoji standard
-
-## 📞 Support
-
-For issues or questions:
-1. Check the [Troubleshooting](#-troubleshooting) section
-2. Review server logs: `docker-compose logs` or `npm start`
-3. Open an issue on GitHub (if applicable)
-
----
-
-**Built with ❤️ for automating text workflows**
