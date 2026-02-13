@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workflow Builder Pro</title>
+  <meta name="description" content="AI-Powered Text Automation Workflow Builder">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes pulse-subtle {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+    .pulse-animate {
+      animation: pulse-subtle 1.5s ease-in-out infinite;
+    }
+    @keyframes slideIn {
+      from { transform: translateX(-10px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    .slide-in {
+      animation: slideIn 0.3s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .fade-in {
+      animation: fadeIn 0.4s ease-out;
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 min-h-screen">
+  <div id="app" class="container mx-auto p-6 max-w-7xl">
+    <!-- Header -->
+    <div class="mb-8 text-center">
+      <h1 class="text-5xl font-bold gradient-text mb-3">⚡ Workflow Builder Pro</h1>
+      <p class="text-slate-600 text-lg">AI-Powered Text Automation Platform</p>
+      <div class="flex justify-center gap-4 mt-4">
+        <button id="saveWorkflowBtn" class="bg-violet-600 hover:bg-violet-700 text-white px-4 py-2 rounded-lg font-medium transition-all shadow-md hover:shadow-lg">
+          💾 Save Workflow
+        </button>
+        <button id="loadWorkflowBtn" class="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-lg font-medium transition-all shadow-md hover:shadow-lg">
+          📂 Load Workflow
+        </button>
+        <button id="exportResultsBtn" class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-lg font-medium transition-all shadow-md hover:shadow-lg hidden">
+          📥 Export Results
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Layout -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <!-- Left Column: Workflow Builder -->
+      <div class="lg:col-span-2 space-y-6">
+        <!-- Workflow Name & Description -->
+        <div class="glass-effect rounded-xl shadow-lg p-6 slide-in">
+          <label class="block text-sm font-bold text-slate-700 mb-2">Workflow Name</label>
+          <input 
+            type="text" 
+            id="workflowName"
+            placeholder="My Awesome Workflow"
+            class="w-full px-4 py-2 border-2 border-violet-200 rounded-lg focus:ring-2 focus:ring-violet-400 focus:border-transparent transition-all"
+          />
+          <label class="block text-sm font-bold text-slate-700 mb-2 mt-4">Description (Optional)</label>
+          <input 
+            type="text" 
+            id="workflowDesc"
+            placeholder="What does this workflow do?"
+            class="w-full px-4 py-2 border-2 border-violet-200 rounded-lg focus:ring-2 focus:ring-violet-400 focus:border-transparent transition-all"
+          />
+        </div>
+
+        <!-- Step Builder -->
+        <div class="glass-effect rounded-xl shadow-lg p-6">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="text-2xl font-bold text-slate-800">📋 Workflow Steps</h2>
+            <button 
+              id="addStepBtn"
+              class="bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white px-5 py-2.5 rounded-lg font-medium transition-all shadow-md hover:shadow-lg transform hover:scale-105"
+            >
+              ➕ Add Step
+            </button>
+          </div>
+          
+          <div id="stepsContainer" class="space-y-3">
+            <!-- Steps will be added here -->
+          </div>
+
+          <div id="emptyState" class="text-center py-12 text-slate-400">
+            <div class="text-7xl mb-3">🔧</div>
+            <p class="text-xl font-medium">No steps yet</p>
+            <p class="text-sm mt-2">Click "Add Step" or load a template to get started!</p>
+          </div>
+        </div>
+
+        <!-- Input & Run -->
+        <div class="glass-effect rounded-xl shadow-lg p-6">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="text-2xl font-bold text-slate-800">📝 Input Text</h2>
+            <button id="sampleTextBtn" class="text-sm text-violet-600 hover:text-violet-800 font-medium">
+              Use Sample Text
+            </button>
+          </div>
+          <textarea 
+            id="inputText"
+            placeholder="Paste your text here to run through the workflow..."
+            class="w-full h-40 px-4 py-3 border-2 border-violet-200 rounded-lg focus:ring-2 focus:ring-violet-400 focus:border-transparent resize-none transition-all"
+          ></textarea>
+          
+          <div class="flex gap-3 mt-4">
+            <button 
+              id="runWorkflowBtn"
+              class="flex-1 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white px-6 py-4 rounded-lg font-bold text-lg transition-all shadow-lg hover:shadow-xl transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+            >
+              ▶️ Run Workflow
+            </button>
+            <button 
+              id="clearBtn"
+              class="bg-slate-200 hover:bg-slate-300 text-slate-700 px-6 py-4 rounded-lg font-medium transition-all"
+            >
+              🗑️ Clear
+            </button>
+          </div>
+          
+          <!-- Live Preview Toggle -->
+          <div class="mt-4 p-3 bg-indigo-50 border-2 border-indigo-200 rounded-lg">
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" id="livePreview" class="w-4 h-4 text-violet-600">
+              <span class="text-sm font-medium text-slate-700">🔍 Enable Live Preview (see step outputs in real-time)</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Results -->
+        <div id="resultsContainer" class="hidden glass-effect rounded-xl shadow-lg p-6 fade-in">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="text-2xl font-bold text-slate-800">✨ Results</h2>
+            <div class="text-sm text-slate-500" id="processingTime"></div>
+          </div>
+          <div id="resultsContent" class="space-y-4">
+            <!-- Results will appear here -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Templates, History & Stats -->
+      <div class="space-y-6">
+        <!-- Quick Stats -->
+        <div class="glass-effect rounded-xl shadow-lg p-6">
+          <h2 class="text-xl font-bold text-slate-800 mb-4">📊 Quick Stats</h2>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="bg-gradient-to-br from-violet-100 to-purple-100 p-4 rounded-lg text-center border-2 border-violet-200">
+              <div class="text-3xl font-bold text-violet-700" id="statSteps">0</div>
+              <div class="text-xs text-slate-600 mt-1">Steps Added</div>
+            </div>
+            <div class="bg-gradient-to-br from-emerald-100 to-teal-100 p-4 rounded-lg text-center border-2 border-emerald-200">
+              <div class="text-3xl font-bold text-emerald-700" id="statRuns">0</div>
+              <div class="text-xs text-slate-600 mt-1">Total Runs</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Templates -->
+        <div class="glass-effect rounded-xl shadow-lg p-6">
+          <h2 class="text-xl font-bold text-slate-800 mb-4">🎨 Quick Templates</h2>
+          <div class="space-y-2">
+            <button class="template-btn w-full text-left px-4 py-3 bg-gradient-to-r from-blue-50 to-cyan-50 hover:from-blue-100 hover:to-cyan-100 rounded-lg transition-all border-2 border-blue-200 shadow-sm hover:shadow-md" data-template="content-summarizer">
+              <div class="font-bold text-slate-800">📄 Content Summarizer</div>
+              <div class="text-xs text-slate-600 mt-1">Clean → Summarize → Extract Key Points</div>
+            </button>
+            <button class="template-btn w-full text-left px-4 py-3 bg-gradient-to-r from-orange-50 to-amber-50 hover:from-orange-100 hover:to-amber-100 rounded-lg transition-all border-2 border-orange-200 shadow-sm hover:shadow-md" data-template="categorizer">
+              <div class="font-bold text-slate-800">🏷️ Smart Categorizer</div>
+              <div class="text-xs text-slate-600 mt-1">Clean → Categorize → Extract Points</div>
+            </button>
+            <button class="template-btn w-full text-left px-4 py-3 bg-gradient-to-r from-pink-50 to-rose-50 hover:from-pink-100 hover:to-rose-100 rounded-lg transition-all border-2 border-pink-200 shadow-sm hover:shadow-md" data-template="analyzer">
+              <div class="font-bold text-slate-800">🎭 Sentiment Analyzer</div>
+              <div class="text-xs text-slate-600 mt-1">Clean → Analyze Sentiment → Summarize</div>
+            </button>
+            <button class="template-btn w-full text-left px-4 py-3 bg-gradient-to-r from-purple-50 to-violet-50 hover:from-purple-100 hover:to-violet-100 rounded-lg transition-all border-2 border-purple-200 shadow-sm hover:shadow-md" data-template="translator">
+              <div class="font-bold text-slate-800">🌐 Multi-Language Tool</div>
+              <div class="text-xs text-slate-600 mt-1">Clean → Translate → Summarize</div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Run History -->
+        <div class="glass-effect rounded-xl shadow-lg p-6">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="text-xl font-bold text-slate-800">🕐 Run History</h2>
+            <button id="clearHistoryBtn" class="text-xs text-red-500 hover:text-red-700 font-medium">Clear All</button>
+          </div>
+          <div id="historyContainer" class="space-y-2">
+            <div class="text-center py-8 text-slate-400">
+              <div class="text-5xl mb-2">📭</div>
+              <p class="text-sm">No runs yet</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Save/Load -->
+  <div id="modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div class="bg-white rounded-xl p-6 max-w-2xl w-full mx-4 max-h-[80vh] overflow-y-auto shadow-2xl">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="text-2xl font-bold text-slate-800" id="modalTitle">Modal</h3>
+        <button id="closeModal" class="text-slate-400 hover:text-slate-600 text-2xl">&times;</button>
+      </div>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
