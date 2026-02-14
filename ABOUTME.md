@@ -2,102 +2,88 @@
 
 ## 👤 Personal Information
 
-**Name:** [Your Full Name]  
-**Location:** [Your City, Country]  
-**Email:** [your.email@example.com]  
-**Phone:** [Your Phone Number]  
-**LinkedIn:** [linkedin.com/in/yourprofile]  
-**GitHub:** [github.com/yourusername]  
-**Portfolio:** [yourportfolio.com] (if applicable)
+**Name:** Sumedh Mahesh Betgeri  
+**Location:** Belagavi, Karnataka, India 
+**Email:** sumedhbetgeri@gmail.com
+**Phone:** 7338361578  
+**LinkedIn:** https://www.linkedin.com/in/sumedh-betgeri-0161aa2a7 
+**GitHub:** https://github.com/sumedhbetgeri  
 
 ---
 
 ## 💼 Professional Summary
 
-[Write 2-3 sentences about yourself]
-
-Example:
-"Full-stack developer with experience in building web applications using modern technologies. Passionate about creating user-friendly solutions and learning new frameworks. Strong problem-solving skills and ability to work independently or in teams."
+Highly motivated Computer Science Engineering student (CGPA: 9.29) with strong fundamentals in programming, system design, and analytical thinking. Experienced in developing real-world projects and solving complex problems with structured approaches. Known for a strong work ethic, learning agility, and the ability to take ownership of tasks while contributing meaningfully to team goals.
 
 ---
 
 ## 🎓 Education
 
-**[Degree Name]**  
-[University Name], [Year]  
-[Relevant coursework or achievements]
+**Bachelor Of Engineering(Computer Science)**  
+K.L.S Gogte Institute Of Technology, 2022-2026  
+CGPA:9.29
+
+**Pre-University(PCMCs)**  
+Govindaram Seksaria Science PU College, Belagavi 2020-2022
+Percentage:95.5
+
+**High School**  
+St Mary’s High School Camp Belagavi 2008-2020
+Percentage:93.92
 
 ---
 
 ## 💻 Technical Skills
 
-### Programming Languages
-- JavaScript/TypeScript
-- Python
-- [Other languages]
-
-### Frontend
-- HTML5, CSS3, TailwindCSS
-- React/Vue/Angular [choose what applies]
-- Responsive Design
-
-### Backend
-- Node.js, Express.js
-- RESTful API Design
-- [Other backend skills]
-
-### Tools & Technologies
-- Git/GitHub
-- Docker
-- Cloud Platforms (AWS/GCP/Render)
-- [Other tools]
-
-### Databases
-- [Your database experience]
-- SQL/NoSQL
+Programming Languages: Python, C++, C(basics)
+Design & Editing: Figma, Canva
+Front-End Tools: HTML, CSS
+Database: MySQL
+Data Visualization tools: Tableau, PowerBi
+Automation tools: UiPath Studio
+Others: Trailhead Salesforce(Admin & Developer Basics)
 
 ---
 
 ## 🚀 Projects
 
-### Workflow Builder Pro (This Project)
+### Workflow Builder Pro 
 - Built full-stack AI-powered workflow automation platform
 - Implemented 6 different text processing step types
 - Deployed to production using Docker and Render.com
 - Technologies: Node.js, Express, TailwindCSS, Anthropic API
 
-### [Other Project Name]
-[Brief description]
-- [Key achievement 1]
-- [Key achievement 2]
-- Technologies: [Tech stack]
+### Your Multilingual Companion (A text to speech translator)
+Developed a GUI-based Python application enabling real-time multilingual text-to-text translation and text-to-speech conversion.
+Integrated googletrans API for dynamic language translation and gTTS (Google Text-toSpeech) for speech synthesis.
+Designed a user-friendly interface ensuring smooth API integration and seamless user interaction.
+Improved cross-language accessibility through efficient processing and reliable speech output.
 
-### [Another Project]
-[Brief description]
+
+### BLIND ASSIST: Smart Assistive Road Crossing System for the Visually Impaired
+Developed an AI-powered assistive system leveraging real-time object detection and environmental sound recognition to identify approaching vehicles and traffic conditions.
+Implemented context-aware decision logic to analyze visual and audio inputs, enabling accurate situational awareness in dynamic outdoor environments.
+Integrated text-to-speech modules to deliver clear, real-time audio guidance for safer road-crossing assistance.
+Enhanced independent mobility for visually impaired users through optimized model performance, low-latency processing, and practical field validation.
 
 ---
 
 ## 🏆 Achievements
 
-- [Any relevant achievements, certifications, or awards]
-- [Hackathons, competitions, etc.]
-- [Open source contributions]
+Coordinated multiple teams, managed event timelines, tracked task progress, and ensured smooth execution of a 24-hour national-level hackathon.
+Won 2nd place in Hackabot 2024 a hackathon conducted by UiPath club of KLS GIT
+Elected as Editor of Computer Society of India Student Chapter at KLS GIT demonstrating leadership, communication and editorial skills(2025)
+An active NSS volunteer, committed to community service and social development(2023)
+As a Board Member of ACE-CSI, coordinated multiple technical events by managing timelines, task delegation, and cross-team communication to ensure smooth execution.
+
 
 ---
 
-## 🌟 Interests
-
-- Web Development
-- AI/Machine Learning
-- [Your interests related to tech]
-
----
 
 ## 📄 Resume
 
-[Attach your resume as a PDF in the repo, or link to it]
 
-**Resume:** [Link to your resume PDF]
+**Resume:** https://github.com/sumedhbetgeri/workflow-builder-pro/blob/main/My_Resume.pdf
 
 ---
 
@@ -105,13 +91,10 @@ Example:
 
 Feel free to reach out for collaboration or opportunities!
 
-**Best way to contact:** [Email/LinkedIn/Phone]
+**Best way to contact:** [sumedhbetgeri@gmail.com/ https://www.linkedin.com/in/sumedh-betgeri-0161aa2a7/ 7338361578]
 
 ---
 
 ## 🎯 What I'm Looking For
 
-[Optional: 1-2 sentences about what kind of role/opportunity you're seeking]
-
-Example:
-"Seeking a full-stack developer position where I can contribute to meaningful projects, continue learning, and grow as a developer. Interested in companies that value innovation, collaboration, and continuous improvement."
+I’m looking for roles in Data Science, Data Analytics, or Full Stack Development where I can work with real data, build meaningful features, and contribute to end-to-end solutions. I enjoy combining analytical thinking with practical implementation to create systems that are both functional and insightful.
